@@ -16,13 +16,14 @@ CONTRACT airgrabacnts : public eosio::contract {
       a.owner = owner;
     });
   }
-  ACTION deleteacnt(uint64_t id){
+  ACTION deleteacnt(uint64_t id) {
     require_auth(get_self());
 
     accounts_table acnts(get_self(), get_self().value);
     auto it = acnts.require_find(id, "id not exists.");
     acnts.erase(it);
   }
+
  private:
   TABLE accounts {
     uint64_t id;
@@ -31,7 +32,7 @@ CONTRACT airgrabacnts : public eosio::contract {
     uint64_t primary_key() const { return id; }
     uint64_t by_owner_name() const { return owner.value; }
 
-    EOSLIB_SERIALIZE(accounts,(id)(owner))
+    EOSLIB_SERIALIZE(accounts, (id)(owner))
   };
 
   typedef eosio::multi_index<
@@ -42,4 +43,4 @@ CONTRACT airgrabacnts : public eosio::contract {
       accounts_table;
 };
 
-EOSIO_DISPATCH(airgrabacnts,(airgrab)(deleteacnt))
+EOSIO_DISPATCH(airgrabacnts, (airgrab)(deleteacnt))
