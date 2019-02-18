@@ -4,14 +4,14 @@ CONTRACT airgrabacnts : public eosio::contract {
  public:
   using eosio::contract::contract;
 
-  ACTION airgrab(eosio::name owner) {
-    require_auth(owner);
+  ACTION open(eosio::name owner, const eosio::symbol& symbol, eosio::name ram_payer) {
+    require_auth(ram_payer);
 
     accounts_table acnts(get_self(), get_self().value);
     auto by_owenr_name = acnts.get_index<"owner"_n>();
     auto owner_it = by_owenr_name.find(owner.value);
     eosio_assert(owner_it == by_owenr_name.cend(), "account already exists.");
-    acnts.emplace(get_self(), [&](auto& a) {
+    acnts.emplace(ram_payer, [&](auto& a) {
       a.id = acnts.available_primary_key();
       a.owner = owner;
     });
@@ -43,4 +43,4 @@ CONTRACT airgrabacnts : public eosio::contract {
       accounts_table;
 };
 
-EOSIO_DISPATCH(airgrabacnts, (airgrab)(deleteacnt))
+EOSIO_DISPATCH(airgrabacnts, (open)(deleteacnt))

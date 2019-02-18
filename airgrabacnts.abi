@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Feb 18 15:30:12 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Feb 18 15:59:41 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -17,16 +17,6 @@
             ]
         },
         {
-            "name": "airgrab",
-            "base": "",
-            "fields": [
-                {
-                    "name": "owner",
-                    "type": "name"
-                }
-            ]
-        },
-        {
             "name": "deleteacnt",
             "base": "",
             "fields": [
@@ -35,18 +25,36 @@
                     "type": "uint64"
                 }
             ]
+        },
+        {
+            "name": "open",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "symbol",
+                    "type": "symbol"
+                },
+                {
+                    "name": "ram_payer",
+                    "type": "name"
+                }
+            ]
         }
     ],
     "types": [],
     "actions": [
         {
-            "name": "airgrab",
-            "type": "airgrab",
+            "name": "deleteacnt",
+            "type": "deleteacnt",
             "ricardian_contract": ""
         },
         {
-            "name": "deleteacnt",
-            "type": "deleteacnt",
+            "name": "open",
+            "type": "open",
             "ricardian_contract": ""
         }
     ],
