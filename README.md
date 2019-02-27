@@ -10,11 +10,11 @@ airgrab.m
 Send Airgrab action on testnet.
 
 ```
-cleos -u http://sidechain-test.meet.one:8888 push action airgrab.m open '["ACCOUNT_NAME","4,MEETONE","ACCOUNT_NAME"]' -p ACCOUNT_NAME
+cleos -u https://fullnode.meet.one push action airgrab.m open '["ACCOUNT_NAME","4,MEETONE","ACCOUNT_NAME"]' -p ACCOUNT_NAME
 ```
 
 Query current accounts.
 
 ```
-cleos -u http://sidechain-test.meet.one:8888 get table airgrab.m airgrab.m accounts
+cleos -u https://fullnode.meet.one get table airgrab.m airgrab.m accounts
 ```
