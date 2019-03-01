@@ -7,7 +7,7 @@ Contract Account Name.
 airgrab.m
 ```
 
-Send Airgrab action on testnet.
+Send Airgrab action.
 
 ```
 cleos -u https://fullnode.meet.one push action airgrab.m open '["ACCOUNT_NAME","4,MEETONE","ACCOUNT_NAME"]' -p ACCOUNT_NAME
