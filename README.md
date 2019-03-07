@@ -1,5 +1,6 @@
 # MEET.ONE sidechain airgrab contract
 
+## Airgrab is closed.
 
 Contract Account Name.
 
